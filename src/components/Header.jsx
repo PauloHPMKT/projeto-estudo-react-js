@@ -34,7 +34,12 @@ const Header = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} className={classes.titleSpacing}>
+          <Typography 
+            variant="h6" 
+            component="div" 
+            sx={{ flexGrow: 1 }} 
+            className={classes.titleSpacing}
+          >
             My App - FFJS
           </Typography>
           <Button color="inherit">Login</Button>

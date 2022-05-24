@@ -17,23 +17,20 @@ const Customers = () => {
   }, [])
 
   return(
-    <>
-      <h1>Customers</h1>
-      <Grid container> 
-      {
-        customers.map(item => (
-          <Grid item xs={12} md={4} style={{padding: 10,}}>
-            <CustomerCard
-              name={item.first_name}
-              lastname={item.last_name}
-              email={item.email}
-              avatar={item.avatar}
-            />
-          </Grid>
-        ))
-      }
-      </Grid>
-    </>
+    <Grid container> 
+    {
+      customers.map(item => (
+        <Grid item xs={12} md={4} style={{padding: 10,}}>
+          <CustomerCard
+            name={item.first_name}
+            lastname={item.last_name}
+            email={item.email}
+            avatar={item.avatar}
+          />
+        </Grid>
+      ))
+    }
+    </Grid>
   )
 }
 

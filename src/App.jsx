@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
+import Customers from './pages/Customers'
 import TemplateDefault from './Templates/Default'
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <TemplateDefault>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/customers" element={<Customers />} />
       </Routes>
     </TemplateDefault>
   )

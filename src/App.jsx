@@ -1,11 +1,14 @@
 import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
+import TemplateDefault from './templates/Default'
 
 const App = () => {
   return(
-    <Routes>
-      <Route path="/" element={<Home />} />
-    </Routes>
+    <TemplateDefault>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </TemplateDefault>
   )
 }
 

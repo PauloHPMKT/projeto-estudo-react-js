@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useState } from 'react'
 
 import {
   AppBar,
@@ -7,9 +7,16 @@ import {
   Typography,
   Button,
   IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
 } from '@mui/material'
 
 import MenuIcon from '@mui/icons-material/Menu'
+import HomeIcon from '@mui/icons-material/Home'
+import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt'
 import { createUseStyles } from 'react-jss'
 
 const useStyles = createUseStyles({
@@ -20,7 +27,12 @@ const useStyles = createUseStyles({
 
 const Header = () => {
   const classes = useStyles()
-  
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const handleToggleMenu = () => {
+    setMenuOpen(!menuOpen)
+  }
+
   return(
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -31,6 +43,7 @@ const Header = () => {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
+            onClick={() => handleToggleMenu()}
           >
             <MenuIcon />
           </IconButton>
@@ -45,6 +58,25 @@ const Header = () => {
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
+      <Drawer 
+        open={menuOpen}
+        onClose={() => handleToggleMenu()}
+      >
+        <List>
+          <ListItem button>
+            <ListItemIcon>
+              <HomeIcon />
+            </ListItemIcon>
+            <ListItemText>Home</ListItemText>
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon>
+              <PersonAddAltIcon />
+            </ListItemIcon>
+            <ListItemText>Cadastro de cliente</ListItemText>
+          </ListItem>
+        </List>
+      </Drawer>
     </Box>
   )
 }
